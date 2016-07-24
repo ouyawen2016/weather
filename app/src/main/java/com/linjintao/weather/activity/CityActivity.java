@@ -1,6 +1,7 @@
 package com.linjintao.weather.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -29,9 +30,9 @@ import java.util.List;
 /**
  * 天气信息界面
  */
-public class CityActivity extends FragmentActivity {
+public class CityActivity extends FragmentActivity implements WeatherFragment.CallBack {
     public static String mCityName;
-    public static ArrayList<String> mDataList = null;
+    private ArrayList<String> mDataList = null;
     private WeatherDB mDB;
     public static WeatherAdapter mWeatherAdapter;
     public static List<Fragment> mFragments;
@@ -46,7 +47,9 @@ public class CityActivity extends FragmentActivity {
         getCityList(); //获取城市列表
 
         mFragments = new ArrayList<>();
-        mFragments.add(WeatherFragment.newInstance()); //添加一个FWeatherragment
+        WeatherFragment fragment = WeatherFragment.newInstance();
+        mFragments.add(fragment); //添加一个FWeatherragment
+        fragment.setOnCallBack(this);
         loadViewPager();
     }
 
@@ -60,7 +63,7 @@ public class CityActivity extends FragmentActivity {
             final ProgressHelper helper = new ProgressHelper(new ProgressDialog(this));
             helper.showProgressDialog(); //显示加载框
 
-            //判断网路是不是连接了
+            //判断网络是不是连接了
             if (HttpUtil.isNetworkConnected()) {
                 String url = "http://v.juhe.cn/weather/citys?key=3256ea25c27e10502962da950edf0436";
                 GsonRequest<CityList> request = new GsonRequest<>(url, CityList.class,
@@ -116,5 +119,12 @@ public class CityActivity extends FragmentActivity {
         mWeatherAdapter = new WeatherAdapter(mManager, mFragments);
         ViewPager mVppager = (ViewPager) findViewById(R.id.city_vp_viewpager);
         mVppager.setAdapter(mWeatherAdapter);
+    }
+
+    @Override
+    public void onCallBack() {
+        Intent intent = new Intent(this, CityChoose.class);
+        intent.putStringArrayListExtra("cityList", mDataList);
+        startActivityForResult(intent, 1);
     }
 }

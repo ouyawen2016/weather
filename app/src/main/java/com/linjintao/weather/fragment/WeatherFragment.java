@@ -16,7 +16,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.linjintao.weather.R;
 import com.linjintao.weather.activity.CityActivity;
-import com.linjintao.weather.activity.CityChoose;
 import com.linjintao.weather.activity.CityFutureDay;
 import com.linjintao.weather.activity.CityManager;
 import com.linjintao.weather.bean.FutureWeatherBean;
@@ -40,13 +39,13 @@ import java.util.List;
  * 这是天气Fragment
  */
 public class WeatherFragment extends Fragment implements View.OnClickListener {
-    public static String mCityName;
+    private String mCityName;
     private Button mBChange, mBRefreshs, mBFuture, mBAddCity;
     private TextView mTvDate, mTvWeather, mTvtemperature, mTvHumid, mTvWindyPower,
             mTvWindyDirection, mTvDressing, mTvUv, mTvComfort, mTvWash,
             mTvTravel, mTvExercise, mTvTitleName;
     private ArrayList<String> mDataList = null; //城市列表
-
+    private CallBack mCallBack;
     public static WeatherFragment newInstance() {
         return new WeatherFragment();
     }
@@ -139,10 +138,11 @@ public class WeatherFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.city_b_change:
 
-                mDataList = CityActivity.mDataList; // 得到城市列表
-                Intent intent = new Intent(getActivity(), CityChoose.class);
-                intent.putStringArrayListExtra("cityList", mDataList);
-                startActivityForResult(intent, 1);
+//                mDataList = CityActivity.mDataList; // 得到城市列表
+//                Intent intent = new Intent(getActivity(), CityChoose.class);
+//                intent.putStringArrayListExtra("cityList", mDataList);
+//                startActivityForResult(intent, 1);
+                mCallBack.onCallBack();
                 break;
 
             case R.id.city_b_add:
@@ -240,5 +240,13 @@ public class WeatherFragment extends Fragment implements View.OnClickListener {
             }
         });
         RequestQueueSingleton.getInstance().addToRequestQueue(request); //添加进网络请求队列
+    }
+
+    public interface CallBack {
+        void onCallBack();
+    }
+
+    public void setOnCallBack(CallBack callBack) {
+        this.mCallBack = callBack;
     }
 }
