@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    >
+
+    <Button
+    android:id="@+id/city_b_change"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/change" />
+
+    <TextView
+    android:id="@+id/city_tv_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:textSize="20sp" />
+
+    <Button
+    android:id="@+id/city_b_refreshs"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:background="@drawable/refesh" />
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:id="@+id/city_rl_weather"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    >
+
+    <TextView
+    android:id="@+id/city_tv_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="20sp" />
+
+
+    <TextView
+    android:id="@+id/city_tv_weather"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_temperature"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:gravity="center"
+    android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:id="@+id/city_rl_1"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginTop="10dp"
+    android:background="#05585849"
+    android:layout_marginStart="13dp"
+    android:layout_marginEnd="13dp">
+
+    <ImageView
+    android:id="@+id/city_iv_windy1"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/windy"
+    android:textAlignment="center" />
+
+    <ImageView
+    android:id="@+id/city_iv_windy2"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerInParent="true"
+    android:src="@drawable/fengli" />
+
+    <ImageView
+    android:id="@+id/city_iv_humid"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_alignParentEnd="true"
+    android:src="@drawable/humid" />
+
+    <TextView
+    android:id="@+id/city_tv_wind1_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_windy1"
+    android:text="@string/city_tv_windy_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_wind2_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_windy2"
+    android:layout_centerInParent="true"
+    android:text="@string/city_tv_windy2_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_humid_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/city_iv_humid"
+    android:layout_marginEnd="10dp"
+    android:text="@string/city_tv_humid_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_wind1_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_wind1_sign"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_wind2_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_wind2_sign"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_humid_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/city_tv_humid_sign"
+    android:layout_marginEnd="15dp"
+
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:layout_marginTop="20dp"
+    android:background="#05585849"
+    android:layout_marginEnd="13dp"
+    android:layout_marginStart="13dp">
+
+    <ImageView
+    android:id="@+id/city_iv_excise"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="10dp"
+    android:src="@drawable/excise" />
+
+    <ImageView
+    android:id="@+id/city_iv_clother"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerInParent="true"
+    android:src="@drawable/clother" />
+
+    <ImageView
+    android:id="@+id/city_iv_uv"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentEnd="true"
+    android:src="@drawable/uv" />
+
+    <TextView
+    android:id="@+id/city_tv_excise_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_excise"
+    android:text="@string/city_tv_excise_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_excise_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_excise_sign"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_clother_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_clother"
+    android:layout_centerInParent="true"
+    android:text="@string/city_tv_clother_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_clother_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_clother_sign"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_uv_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/city_iv_uv"
+    android:text="@string/city_tv_dressup_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_uv_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/city_tv_uv_sign"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <ImageView
+    android:id="@+id/city_iv_travel"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/city_tv_excise_text"
+    android:src="@drawable/travel" />
+
+    <ImageView
+    android:id="@+id/city_iv_wash"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/city_tv_clother_text"
+    android:src="@drawable/wash" />
+
+    <ImageView
+    android:id="@+id/city_iv_comfort"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentEnd="true"
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/city_tv_uv_text"
+    android:src="@drawable/hot" />
+
+    <TextView
+    android:id="@+id/city_tv_travel_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_travel"
+    android:text="@string/city_tv_travel_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_wash_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_iv_wash"
+    android:layout_centerInParent="true"
+    android:text="@string/city_tv_wash_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_comfort_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@+id/city_iv_comfort"
+    android:text="@string/city_tv_hot_sign"
+    android:textColor="#7c42d7dd"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_travel_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_travel_sign"
+    android:layout_marginStart="15sp"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_wash_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/city_tv_wash_sign"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+    <TextView
+    android:id="@+id/city_tv_comfort_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_below="@id/city_tv_comfort_sign"
+    android:layout_marginEnd="25sp"
+    android:layout_marginTop="3dp"
+    android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/city_b_future"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/city_tv_travel_text"
+            android:background="@drawable/seven"
+            android:layout_marginEnd="10dp"
+            />
+    <Button
+        android:id="@+id/city_b_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city_tv_travel_text"
+        android:background="@drawable/add"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
