@@ -28,6 +28,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 项目进度：未完成...
+ */
+
+/**
  * 天气信息界面
  */
 public class CityActivity extends FragmentActivity implements WeatherFragment.CallBack {
